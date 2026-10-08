@@ -75,6 +75,7 @@ A to-do list website for planning and tracking tasks, with a calendar view, voic
     <li><code>index.html</code>: page structure</li>
     <li><code>style.css</code>: styling</li>
     <li><code>script.js</code>: functionality</li>
+    <li><code>screenshot.png</code>: preview of site</li>
 </ul>
 <h2>Connect With Me</h2>
 <p align="center">
