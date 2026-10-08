@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- switch to calendar view button -->
+        <button id="toggleViewBtn" class="view-toggle-btn">Calendar View</button>
+
+        <!-- weekly report button -->
+        <button id="weeklyReportBtn" class="view-toggle-btn" style="right: 150px;">Weekly Report</button>
+
+        <!-- shopping list button -->
+        <button id="shoppingListBtn" class="view-toggle-btn" style="right: 300px;">Shopping List</button>
+        
+        <!-- left editing section -->
+        <div class="task-actions">
+            <h1>To-Do List</h1>
+            
+            <!-- level system -->
+            <div class="level-container" id="levelContainer">
+                <div class="avatar">
+                    
+                </div> <!-- current level and xp -->
+                <div class="level-info">
+                    <p class="level-title">Level <span class="level-number">1</span></p>
+                    <p class="xp-text">XP: 0/100</p>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- add new tasks -->
+            <div class="task-form">
+                <input type="text" id="taskInput" placeholder="Task Name">
+                <!-- dropdown to allocate category  -->
+                <select id="categoryInput">
+                    <option value="general">General</option>
+                    <option value="work">Work</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="personal">Personal</option>
+                    <option value="urgent">Urgent</option>
+                </select>
+                
+                <!-- dropdown to allocate priority -->
+                <select id="priorityInput">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <input type="date" id="dueDateInput">
+                <textarea id="notesInput" placeholder="Notes"></textarea>
+                <input type="text" id="estimatedTimeInput" placeholder="Estimated Time">
+                <input type="text" id="energyRequiredInput" placeholder="Energy Required">
+                <input type="file" id="attachmentInput">
+                
+                <button id="addTaskBtn">Add Task</button>
+            </div>
+            <!-- voice input -->
+            <!-- emojis from: https://emojipedia.org/microphone -->
+            <div class="voice-input">
+                <button id="voiceInputBtn">🎤 Task Input</button>
+                <button id="voiceDateInputBtn">🎤 Date Input</button>
+            </div>
+            <!-- filter and sort -->
+            <div class="sort-filter">
+                <div class="filter-container">
+                    <select id="filterCategory">
+                        <option value="all">Filter By: All</option>
+                        <option value="general">General</option>
+                        <option value="work">Work</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="personal">Personal</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+                <button id="sortPriorityBtn">Sort by Priority</button>
+                <button id="sortDueDateBtn">Sort by Due Date</button>
+            </div>
+        </div>
+        
+        <!-- display task list -->
+        <div class="task-list">
+            <!-- switch between completed and incomplete tasks -->
+            <div class="tab-navigation">
+                <button id="viewActiveBtn" class="tab-btn active-tab">Active Tasks</button>
+                <button id="viewCompletedBtn" class="tab-btn">Completed Tasks</button>
+            </div>
+            <ul id="taskList"></ul>
+        </div>
+
+        
+        <!-- calendar view -->
+        <div class="calendar-container" style="display: none;">
+            <div class="calendar-header">
+                <button id="prevMonthBtn">←</button>
+                <h2 id="currentMonthDisplay">Month YYYY</h2>
+                <button id="nextMonthBtn">→</button>
+            </div>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div id="calendarDays" class="calendar-days"></div>
+        </div>
+
+        <div class="bottom-controls">
+            <button id="downloadTasksBtn" class="sort-btn">Download Tasks</button>
+          </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
